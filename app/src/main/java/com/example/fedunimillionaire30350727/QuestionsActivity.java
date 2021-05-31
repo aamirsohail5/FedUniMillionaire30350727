@@ -12,7 +12,24 @@ import java.util.ArrayList;
 
 public class QuestionsActivity extends AppCompatActivity {
 
+    //an arraylist containing questions
     public ArrayList<Question> questions = new ArrayList<Question>();
+
+    //An arraylist containing choices for first question
+    public ArrayList<Answer> question1Answers = new ArrayList<Answer>();
+
+    //ArrayListContaining choices for question 2
+    public ArrayList<Answer> question2Answers = new ArrayList<Answer>();
+    public ArrayList<Answer> question3Answers = new ArrayList<Answer>();
+    public ArrayList<Answer> question4Answers = new ArrayList<Answer>();
+    public ArrayList<Answer> question5Answers = new ArrayList<Answer>();
+    public ArrayList<Answer> question6Answers = new ArrayList<Answer>();
+    public ArrayList<Answer> question7Answers = new ArrayList<Answer>();
+    public ArrayList<Answer> question8Answers = new ArrayList<Answer>();
+    public ArrayList<Answer> question9Answers = new ArrayList<Answer>();
+    public ArrayList<Answer> question10Answers = new ArrayList<Answer>();
+    public ArrayList<Answer> question11Answers = new ArrayList<Answer>();
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,68 +60,57 @@ public class QuestionsActivity extends AppCompatActivity {
         question10.setText("Horowitz is the original surname of which American actor?");
         question11.setText("In which field did 16th century Italian Benvenuto Cellini achieve fame?");
 
-        ArrayList<Answer> question1Answers = new ArrayList<Answer>();
         question1Answers.add(new Answer("A", "Painting"));
         question1Answers.add(new Answer("B", "Architecture"));
         question1Answers.add(new Answer("C", "Music"));
         question1Answers.add(new Answer("D", "Sculpture"));
 
-        ArrayList<Answer> question2Answers = new ArrayList<Answer>();
         question2Answers.add(new Answer("A", "Australia"));
         question2Answers.add(new Answer("B", "New Zealand"));
         question2Answers.add(new Answer("C", "England"));
         question2Answers.add(new Answer("D", "Canada"));
 
-        ArrayList<Answer> question3Answers = new ArrayList<Answer>();
         question3Answers.add(new Answer("A", "New Zealand"));
         question3Answers.add(new Answer("B", "Norway"));
         question3Answers.add(new Answer("C", "Chile"));
         question3Answers.add(new Answer("D", "Iceland"));
 
-        ArrayList<Answer> question4Answers = new ArrayList<Answer>();
         question4Answers.add(new Answer("A", "The Gondoliers"));
         question4Answers.add(new Answer("B", "The Pirates of Penzance"));
         question4Answers.add(new Answer("C", "The Mikado"));
         question4Answers.add(new Answer("D", "The Yeomen og the Guard"));
 
-        ArrayList<Answer> question5Answers = new ArrayList<Answer>();
         question5Answers.add(new Answer("A", "6"));
         question5Answers.add(new Answer("B", "8"));
         question5Answers.add(new Answer("C", "10"));
         question5Answers.add(new Answer("D", "13"));
 
-        ArrayList<Answer> question6Answers = new ArrayList<Answer>();
         question6Answers.add(new Answer("A", "Bewitched"));
         question6Answers.add(new Answer("B", "Get Smart"));
         question6Answers.add(new Answer("C", "Hogan's Heroes"));
         question6Answers.add(new Answer("D", "I dream of Jeannie"));
 
-        ArrayList<Answer> question7Answers = new ArrayList<Answer>();
         question7Answers.add(new Answer("A", "Adolf Hitler"));
         question7Answers.add(new Answer("B", "Ruhollah Khomeini"));
         question7Answers.add(new Answer("C", "Joseph Stalin"));
         question7Answers.add(new Answer("D", "Mao Zedong"));
 
-        ArrayList<Answer> question8Answers = new ArrayList<Answer>();
         question8Answers.add(new Answer("A", "Albert Burke"));
         question8Answers.add(new Answer("B", "Andrew Barton"));
         question8Answers.add(new Answer("C", "Adam Beaufort"));
         question8Answers.add(new Answer("D", "Adrian Banks"));
 
-        ArrayList<Answer> question9Answers = new ArrayList<Answer>();
         question9Answers.add(new Answer("A", "Albert"));
         question9Answers.add(new Answer("B", "Harry"));
         question9Answers.add(new Answer("C", "Jack"));
         question9Answers.add(new Answer("D", "Sam"));
 
-
-        ArrayList<Answer> question10Answers = new ArrayList<Answer>();
         question10Answers.add(new Answer("A", "Matt Damon"));
         question10Answers.add(new Answer("B", "Johnny Deep"));
         question10Answers.add(new Answer("C", "Julia Roberts"));
         question10Answers.add(new Answer("D", "Winona Ryder"));
 
-        ArrayList<Answer> question11Answers = new ArrayList<Answer>();
+
         question11Answers.add(new Answer("A", "French"));
         question11Answers.add(new Answer("B", "Egyptian"));
         question11Answers.add(new Answer("C", "Roman"));
