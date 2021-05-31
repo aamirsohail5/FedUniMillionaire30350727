@@ -22,8 +22,6 @@ public class GameStatusAndLifeLineActivity extends AppCompatActivity implements 
         btn1.setOnClickListener(this);
         Button btn2 = (Button) findViewById(R.id.btn_ask_the_audience);
         btn2.setOnClickListener(this);
-        Button btn3 = (Button) findViewById(R.id.btn_switch_question);
-        btn3.setOnClickListener(this);
 
 
         TextView questionStat = (TextView) findViewById(R.id.question_gameStatus);
@@ -39,14 +37,14 @@ public class GameStatusAndLifeLineActivity extends AppCompatActivity implements 
         switch (v.getId()) {
             case R.id.btn_half_lifeline:
 
-                Toast.makeText(this, "LIFELIEN", Toast.LENGTH_SHORT).show();
+                GameUtil.setIshalfChaseActivated(true);
+                Toast.makeText(this, "YOU GOT FREE LIFELINE", Toast.LENGTH_LONG).show();
                 break;
             case R.id.btn_ask_the_audience:
-                Toast.makeText(this, "ASKAUDIENCE", Toast.LENGTH_SHORT).show();
 
-                break;
-            case R.id.btn_switch_question:
-                Toast.makeText(this, "SWITEH", Toast.LENGTH_SHORT).show();
+                int answerPos=GameUtil.getCurrentQuiz()-1;
+                int rand=30 + (int)(Math.random() * ((100 - 30) + 1));
+                Toast.makeText(this, rand+"% people say correct answer is "+GameUtil.getCorrectAnswers().charAt(answerPos), Toast.LENGTH_SHORT).show();
                 break;
 
             default:

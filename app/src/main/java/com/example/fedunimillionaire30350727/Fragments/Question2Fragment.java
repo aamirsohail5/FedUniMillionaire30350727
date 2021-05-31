@@ -46,7 +46,6 @@ public class Question2Fragment extends Fragment implements View.OnClickListener{
 
         view.findViewById(R.id.btn_half_lifeline).setOnClickListener(this);
         view.findViewById(R.id.btn_ask_the_audience).setOnClickListener(this);
-        view.findViewById(R.id.btn_switch_question).setOnClickListener(this);
         view.findViewById(R.id.btnD).setOnClickListener(this);
 
         Question question = questions.get(1);
@@ -66,17 +65,52 @@ public class Question2Fragment extends Fragment implements View.OnClickListener{
     }
 
     @Override
+    public void onResume() {
+        super.onResume();
+        if(GameUtil.isIshalfChaseActivated()){
+
+            ArrayList<Integer>buttonsSetInvisible=GameUtil.choosePositionToLeave(GameUtil.getCorrectAnswers().charAt(GameUtil.getCurrentQuiz()));
+
+            if((int)buttonsSetInvisible.get(0)==1){
+                getActivity().findViewById(R.id.btnA).setVisibility(View.INVISIBLE);
+            }else if((int)buttonsSetInvisible.get(0)==2){
+                getActivity().findViewById(R.id.btnB).setVisibility(View.INVISIBLE);
+            }
+            else if((int)buttonsSetInvisible.get(0)==3){
+                getActivity().findViewById(R.id.btnC).setVisibility(View.INVISIBLE);
+            }else if((int)buttonsSetInvisible.get(1)==1){
+                getActivity().findViewById(R.id.btnA).setVisibility(View.INVISIBLE);
+            }else if((int)buttonsSetInvisible.get(1)==2){
+                getActivity().findViewById(R.id.btnB).setVisibility(View.INVISIBLE);
+            }else if((int)buttonsSetInvisible.get(1)==3){
+                getActivity().findViewById(R.id.btnC).setVisibility(View.INVISIBLE);
+
+            }else if((int)buttonsSetInvisible.get(2)==1){
+                getActivity().findViewById(R.id.btnA).setVisibility(View.INVISIBLE);
+            }else if((int)buttonsSetInvisible.get(2)==2){
+                getActivity().findViewById(R.id.btnB).setVisibility(View.INVISIBLE);
+            }else if((int)buttonsSetInvisible.get(2)==3){
+                getActivity().findViewById(R.id.btnC).setVisibility(View.INVISIBLE);
+
+            }
+
+        }
+    }
+
+    @Override
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.btn_switch_question:
+            case R.id.btnA:
+                GameUtil.setIshalfChaseActivated(false);
                 getFragmentManager()
                         .beginTransaction()
                         .replace(R.id.questions_holder, new Question3Fragment(questions,saved))
                         .commit();
                 break;
-            case R.id.btn_half_lifeline:
-            case R.id.btn_ask_the_audience:
+            case R.id.btnB:
+            case R.id.btnC:
             case R.id.btnD:
+                GameUtil.setIshalfChaseActivated(false);
                 getFragmentManager()
                         .beginTransaction()
                         .replace(R.id.questions_holder, new ResultFragment(saved))
